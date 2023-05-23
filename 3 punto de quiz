@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int getInvertNumber(int number) {
+    int inverted = 0;
+    
+    while (number > 0) {
+        inverted = inverted * 10 + (number % 10);
+        number /= 10;
+    }
+    
+    return inverted;
+}
+
+int main() {
+    int number;
+    
+    printf("Ingrese un número: ");
+    if (scanf("%d", &number) != 1) {
+        printf("Error: No se ha ingresado un número válido.\n");
+        return 1;
+    }
+    
+    int invertedNumber = getInvertNumber(number);
+    
+    printf("El número invertido es: %d\n", invertedNumber);
+    
+    return 0;
+}
