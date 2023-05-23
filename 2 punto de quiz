@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+// Declaración del método getRevertText
+void getRevertText(const char* text, char* result);
+
+int main() {
+    char originalText[100];
+    printf("Ingrese un texto: ");
+    scanf("%s", originalText);
+    
+    char* revertedText = (char*)malloc((strlen(originalText) + 1) * sizeof(char));
+    getRevertText(originalText, revertedText);
+    
+    printf("Texto original: %s\n", originalText);
+    printf("Texto revertido: %s\n", revertedText);
+    
+    // Liberar la memoria asignada para el texto revertido
+    free(revertedText);
+
+    return 0;
+}
+
+// Definición del método getRevertText
+void getRevertText(const char* text, char* result) {
+    int length = strlen(text);
+
+    for (int i = 0; i < length; i++) {
+        result[i] = text[length - i - 1];
+    }
+    result[length] = '\0';
+}
