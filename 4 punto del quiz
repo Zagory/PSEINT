@@ -1,31 +1,82 @@
-2 punto
-Proceso getRevertText
-    Definir texto, textoRevertido Como Caracteres
-    Escribir "Ingrese un texto:"
-    Leer texto
+Algoritmo getRevertText
 
-    textoRevertido <- ""
+	// Definir las variables	Definir texto, textoInvertido Como Caracter;
 
-    Para i <- Longitud(texto) Hasta 1 Con Paso -1 Hacer
-        textoRevertido <- textoRevertido + SubCadena(texto, i, 1)
-    FinPara
+	Definir i Como Entero;
 
-    Escribir "El texto revertido es:", textoRevertido
-FinProceso
+	
+
+	// Solicitar al usuario que ingrese un texto
+
+	Escribir "Ingrese un texto: ";
+
+	Leer texto;
+
+	
+
+	// Inicializar la variable invertida
+
+	textoInvertido <- "";
+
+	
+
+	// Recorrer el texto de atrás hacia adelante y concatenar cada carácter al texto invertido
+
+	Para i <- longitud(texto) Hasta 1 Con Paso -1 Hacer
+
+		textoInvertido <- textoInvertido + subcadena(texto,i,1);
+
+	FinPara
+
+	
+
+	// Devolver el texto invertido
+
+	Escribir "El texto invertido es: ", textoInvertido;
+
+FinAlgoritmo
+
+```
+
+Y aquí está el código del algoritmo getInvertNumber, que recibe un número como parámetro y devuelve el número invertido:
 
 
-3 punto
-Proceso getInvertNumber
-    Definir numero, numeroInvertido Como Entero
-    Escribir "Ingrese un número:"
-    Leer numero
+Algoritmo getInvertNumber
 
-    numeroInvertido <- 0
+	// Definir las variables
 
-    Mientras numero > 0 Hacer
-        numeroInvertido <- numeroInvertido * 10 + numero % 10
-        numero <- numero / 10
-    FinMientras
+	Definir numero, numeroInvertido Como Entero;
 
-    Escribir "El número invertido es:", numeroInvertido
-FinProceso
+	
+
+	// Solicitar al usuario que ingrese un número
+
+	Escribir "Ingrese un número: ";
+
+	Leer numero;
+
+	
+
+	// Inicializar la variable invertida
+
+	numeroInvertido <- 0;
+
+	
+
+	// Mientras el número sea mayor que cero, obtener el último dígito y multiplicarlo por una potencia de 10 según la posición, y sumarlo al número invertido
+
+	Mientras numero > 0 Hacer
+
+		numeroInvertido <- numeroInvertido + (numero % 10) * potencia(10,longitud(numero)-1);
+
+		numero <- numero / 10;
+
+	FinMientras
+
+	
+
+	// Devolver el número invertido
+
+	Escribir "El número invertido es: ", numeroInvertido;
+
+FinAlgoritmo
