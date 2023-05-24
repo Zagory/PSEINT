@@ -1,0 +1,31 @@
+2 punto
+Proceso getRevertText
+    Definir texto, textoRevertido Como Caracteres
+    Escribir "Ingrese un texto:"
+    Leer texto
+
+    textoRevertido <- ""
+
+    Para i <- Longitud(texto) Hasta 1 Con Paso -1 Hacer
+        textoRevertido <- textoRevertido + SubCadena(texto, i, 1)
+    FinPara
+
+    Escribir "El texto revertido es:", textoRevertido
+FinProceso
+
+
+3 punto
+Proceso getInvertNumber
+    Definir numero, numeroInvertido Como Entero
+    Escribir "Ingrese un número:"
+    Leer numero
+
+    numeroInvertido <- 0
+
+    Mientras numero > 0 Hacer
+        numeroInvertido <- numeroInvertido * 10 + numero % 10
+        numero <- numero / 10
+    FinMientras
+
+    Escribir "El número invertido es:", numeroInvertido
+FinProceso
